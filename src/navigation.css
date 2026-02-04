@@ -1,0 +1,115 @@
+/* This CSS applies your exact color scheme to the navigation */
+.cyber-navigation {
+  position: relative;
+  z-index: 50;
+}
+
+.cyber-navigation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2D4A77, #1A2B48, #2D4A77);
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  color: #5C7699 !important;
+}
+
+.logout-button {
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.language-toggle {
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background-color: #1A2B48;
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-link {
+  padding: 0.75rem 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-dropdown-toggle {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-submenu {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-submenu-item {
+  display: block;
+  padding: 0.5rem 0;
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-logout {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.mobile-language-toggle {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
