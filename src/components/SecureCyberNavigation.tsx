@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useSecureTranslation } from '../i18n/SecureI18nProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
-import './navigation.css'; // Critical: import the CSS
+import './navigation.css';
 
 export const SecureCyberNavigation = () => {
   const { t, language } = useSecureTranslation();
