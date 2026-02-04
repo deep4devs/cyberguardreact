@@ -4,11 +4,25 @@
 		{ "path": "./tsconfig.node.json" },
 		{ "path": "./tsconfig.cloudflare.json" }
 	],
-	"compilerOptions": {
-		"checkJs": true,
-		"verbatimModuleSyntax": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true
-	}
+	
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "allowJs": false,
+    "noEmit": true,
+    "esModuleInterop": false,
+    "isolatedModules": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client"]
+  },
+  "include": ["src"]
+}
+
+
 }
