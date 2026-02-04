@@ -1,4 +1,4 @@
-import './polyfills'; // ADD THIS LINE AT THE VERY TOP
+import './polyfills'; // MUST BE FIRST LINE
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
