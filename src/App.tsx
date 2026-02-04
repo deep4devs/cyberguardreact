@@ -1,6 +1,8 @@
 import { BrowserRouter } from 'react-router-dom'
+// CHANGE THIS LINE:
+// import i18n from './i18n'
+import { i18n } from './i18n/config'  // CORRECT IMPORT PATH
 import { I18nextProvider } from 'react-i18next'
-import i18n from './i18n'
 import { CybersecurityNavigation } from './components/CybersecurityNavigation'
 import { SecurityHubInfo } from './components/SecurityHubInfo'
 import { SecurityServices } from './components/SecurityServices'
