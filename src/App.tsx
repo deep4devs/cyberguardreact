@@ -1,9 +1,9 @@
 import { BrowserRouter } from 'react-router-dom'
-// CHANGE THIS LINE:
-// import i18n from './i18n'
-import { i18n } from './i18n/config'  // CORRECT IMPORT PATH
+import { i18n } from './i18n/config'
 import { I18nextProvider } from 'react-i18next'
-import { CybersecurityNavigation } from './components/CybersecurityNavigation'
+// CHANGE THIS LINE:
+// import { CybersecurityNavigation } from './components/CybersecurityNavigation'
+import { SecureCyberNavigation as CybersecurityNavigation } from './components/SecureCyberNavigation'  // CORRECT IMPORT PATH
 import { SecurityHubInfo } from './components/SecurityHubInfo'
 import { SecurityServices } from './components/SecurityServices'
 import { ContactSection } from './components/ContactSection'
