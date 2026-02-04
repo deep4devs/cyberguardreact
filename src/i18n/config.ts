@@ -123,4 +123,35 @@ export { i18n, secureT };
 
 // At the bottom of the file
 
+// Add these translations to your existing resources
+
+// English
+'en': {
+  translation: {
+    // Existing translations...
+    
+    // Add these new ones
+    'nav.name': 'Name',
+    'nav.email': 'Email',
+    'nav.message': 'Message',
+    'nav.send': 'Send Message',
+    'footer.copyright': '© {{year}} CyberGuard. All rights reserved.',
+    'footer.confidential': 'This system is for authorized use only. All activities are logged and monitored.'
+  }
+},
+
+// Spanish
+'es': {
+  translation: {
+    // Existing translations...
+    
+    // Add these new ones
+    'nav.name': 'Nombre',
+    'nav.email': 'Correo Electrónico',
+    'nav.message': 'Mensaje',
+    'nav.send': 'Enviar Mensaje',
+    'footer.copyright': '© {{year}} CyberGuard. Todos los derechos reservados.',
+    'footer.confidential': 'Este sistema es para uso autorizado únicamente. Todas las actividades son registradas y monitoreadas.'
+  }
+}
 
