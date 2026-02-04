@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -53,9 +52,17 @@ const resources = {
       'nav.services.training': 'Security Training',
       'nav.services.incident': 'Incident Response',
       
+      // Form elements
+      'nav.name': 'Name',
+      'nav.email': 'Email',
+      'nav.message': 'Message',
+      'nav.send': 'Send Message',
+      
       // General
       'security.secure': 'SECURE',
-      'app.title': 'CyberGuard - Advanced Cybersecurity Services'
+      'app.title': 'CyberGuard - Advanced Cybersecurity Services',
+      'footer.copyright': '© {{year}} CyberGuard. All rights reserved.',
+      'footer.confidential': 'This system is for authorized use only. All activities are logged and monitored.'
     }
   },
   es: {
@@ -90,9 +97,17 @@ const resources = {
       'nav.services.training': 'Capacitación en Seguridad',
       'nav.services.incident': 'Respuesta a Incidentes',
       
+      // Form elements
+      'nav.name': 'Nombre',
+      'nav.email': 'Correo Electrónico',
+      'nav.message': 'Mensaje',
+      'nav.send': 'Enviar Mensaje',
+      
       // General
       'security.secure': 'SEGURO',
-      'app.title': 'CyberGuard - Servicios Avanzados de Ciberseguridad'
+      'app.title': 'CyberGuard - Servicios Avanzados de Ciberseguridad',
+      'footer.copyright': '© {{year}} CyberGuard. Todos los derechos reservados.',
+      'footer.confidential': 'Este sistema es para uso autorizado únicamente. Todas las actividades son registradas y monitoreadas.'
     }
   }
 };
@@ -120,38 +135,3 @@ i18n
   });
 
 export { i18n, secureT };
-
-// At the bottom of the file
-
-// Add these translations to your existing resources
-
-// English
-'en': {
-  translation: {
-    // Existing translations...
-    
-    // Add these new ones
-    'nav.name': 'Name',
-    'nav.email': 'Email',
-    'nav.message': 'Message',
-    'nav.send': 'Send Message',
-    'footer.copyright': '© {{year}} CyberGuard. All rights reserved.',
-    'footer.confidential': 'This system is for authorized use only. All activities are logged and monitored.'
-  }
-},
-
-// Spanish
-'es': {
-  translation: {
-    // Existing translations...
-    
-    // Add these new ones
-    'nav.name': 'Nombre',
-    'nav.email': 'Correo Electrónico',
-    'nav.message': 'Mensaje',
-    'nav.send': 'Enviar Mensaje',
-    'footer.copyright': '© {{year}} CyberGuard. Todos los derechos reservados.',
-    'footer.confidential': 'Este sistema es para uso autorizado únicamente. Todas las actividades son registradas y monitoreadas.'
-  }
-}
-
