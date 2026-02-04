@@ -1,1 +1,396 @@
+:root {
+  /* Your specified color scheme */
+  --primary: #1A2B48;
+  --secondary: #2D4A77;
+  --icons-details: #FFFFFF;
+  --contrast-text: #5C7699;
+  --lines-watermarks: #0D1522;
+  
+  /* Derived accessible colors for UI states */
+  --primary-light: #24385A;
+  --primary-dark: #132035;
+  --secondary-light: #385A8C;
+  --secondary-dark: #233A5D;
+  --hover-overlay: rgba(255, 255, 255, 0.1);
+  --active-overlay: rgba(255, 255, 255, 0.2);
+  --dropdown-shadow: 0 10px 15px -3px rgba(13, 21, 34, 0.3);
+  
+  /* Security-critical elements */
+  --security-high: #DC2626;
+  --security-medium: #EA580C;
+  --security-low: #CA8A04;
+  
+  /* Typography */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+/* Security hardening: Prevent injection attacks in CSS */
+[style*="expression("], 
+[style*="javascript:"] {
+  all: unset !important;
+}
+
+/* CSP-compliant styling for navigation */
+.secure-cyber-navigation {
+  background-color: var(--primary);
+  color: var(--icons-details);
+  box-shadow: 0 4px 6px -1px var(--lines-watermarks);
+  position: relative;
+  z-index: 50;
+}
+
+.secure-cyber-navigation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary-light), var(--secondary));
+}
+
+.cyber-nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.cyber-nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+}
+
+.cyber-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--icons-details);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.cyber-logo-icon {
+  background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px var(--lines-watermarks);
+}
+
+.cyber-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cyber-logo-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cyber-logo-main::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--icons-details);
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+.cyber-logo-sub {
+  font-size: 0.75rem;
+  color: var(--contrast-text);
+  font-weight: 400;
+}
+
+/* Navigation items */
+.cyber-nav-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.cyber-nav-item {
+  position: relative;
+}
+
+.cyber-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--icons-details);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.cyber-nav-link:hover {
+  background-color: var(--hover-overlay);
+}
+
+.cyber-nav-link.active {
+  background-color: var(--active-overlay);
+  font-weight: 600;
+}
+
+.cyber-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.2s ease;
+  z-index: 20;
+}
+
+.cyber-nav-link:hover::after {
+  width: 70%;
+}
+
+/* Dropdown menu */
+.cyber-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background-color: var(--primary-dark);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--dropdown-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 100;
+  padding: 0.5rem 0;
+}
+
+.cyber-nav-item:hover .cyber-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cyber-dropdown-item {
+  padding: 0.75rem 1.25rem;
+  color: var(--icons-details);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.cyber-dropdown-item:hover {
+  background-color: var(--hover-overlay);
+}
+
+.cyber-dropdown-divider {
+  height: 1px;
+  background-color: var(--lines-watermarks);
+  margin: 0.25rem 0;
+}
+
+.cyber-dropdown-category {
+  padding: 0.5rem 1.25rem;
+  color: var(--contrast-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Security indicators */
+.security-high {
+  color: var(--security-high);
+}
+
+.security-medium {
+  color: var(--security-medium);
+}
+
+.security-low {
+  color: var(--security-low);
+}
+
+/* Language toggle */
+.language-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  color: var(--icons-details);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-toggle:hover {
+  background: var(--hover-overlay);
+}
+
+/* Mobile menu */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--icons-details);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background-color: var(--primary);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--icons-details);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.mobile-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--icons-details);
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1rem;
+}
+
+.mobile-dropdown.open {
+  max-height: 1000px;
+}
+
+/* Watermark effect */
+.watermark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.03;
+  background-image: 
+    linear-gradient(30deg, var(--lines-watermarks) 12%, transparent 12.5%, transparent 87%, var(--lines-watermarks) 87.5%, var(--lines-watermarks)),
+    linear-gradient(150deg, var(--lines-watermarks) 12%, transparent 12.5%, transparent 87%, var(--lines-watermarks) 87.5%, var(--lines-watermarks)),
+    linear-gradient(30deg, var(--lines-watermarks) 12%, transparent 12.5%, transparent 87%, var(--lines-watermarks) 87.5%, var(--lines-watermarks)),
+    linear-gradient(150deg, var(--lines-watermarks) 12%, transparent 12.5%, transparent 87%, var(--lines-watermarks) 87.5%, var(--lines-watermarks)),
+    linear-gradient(60deg, var(--lines-watermarks) 11.1%, transparent 11.1%, transparent 88.9%, var(--lines-watermarks) 88.9%),
+    linear-gradient(60deg, rgba(13, 21, 34, 0.05) 11.1%, transparent 11.1%, transparent 88.9%, rgba(13, 21, 34, 0.05) 88.9%);
+  background-size: 80px 140px;
+  transform: rotate(0deg);
+}
+
+/* Security badge */
+.security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+/* Framework-specific styling */
+.nist-framework {
+  border-left: 3px solid #0EA5E9;
+}
+
+.iso-framework {
+  border-left: 3px solid #8B5CF6;
+}
+
+.cyber-nav-link.nist-framework:hover {
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.cyber-nav-link.iso-framework:hover {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}
 
