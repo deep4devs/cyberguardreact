@@ -1,8 +1,8 @@
-import './polyfills'; // MUST BE FIRST LINE
+import './polyfills'; // First line
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
+import './index.css'; // THIS IMPORT MUST EXIST
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
