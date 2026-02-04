@@ -25,3 +25,17 @@ const App = () => {
 };
 
 createRoot(document.getElementById('root')!).render(<App />);
+
+import { SecureCyberNavigation } from './components/SecureCyberNavigation';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <SecureCyberNavigation />
+      <main className="container mx-auto px-4 py-8">
+        <h1 className="text-2xl font-bold text-gray-800">You should see the navigation menu above this text</h1>
+      </main>
+    </div>
+  );
+}
+
