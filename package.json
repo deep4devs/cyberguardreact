@@ -1,8 +1,33 @@
-"scripts": {
-  "dev": "vite",
-  "build": "npm run type-check && vite build",
-  "type-check": "tsc --noEmit",
-  "preview": "vite preview",
-  "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-  "format": "prettier --write src/"
+{
+  "name": "cyberguardreact",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "buffer": "^6.0.3",
+    "dompurify": "^3.1.4",
+    "i18next": "^23.11.4",
+    "i18next-browser-languagedetector": "^7.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.1",
+    "react-router-dom": "^6.23.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.10.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
 }
