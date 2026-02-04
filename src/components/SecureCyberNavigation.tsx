@@ -2,16 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useSecureTranslation } from '../i18n/SecureI18nProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
+import './navigation.css'; // Critical: import the CSS
 
-/**
- * Professional cybersecurity navigation menu with NIST & ISO frameworks
- * Security-hardened implementation with:
- * - Proper CSP compliance (no inline styles)
- * - XSS protection for all dynamic content
- * - Clickjacking prevention
- * - Secure routing
- * - WCAG 2.1 AA accessibility compliance
- */
 export const SecureCyberNavigation = () => {
   const { t, language } = useSecureTranslation();
   const location = useLocation();
@@ -115,10 +107,6 @@ export const SecureCyberNavigation = () => {
     <nav 
       className="cyber-navigation"
       aria-label={t('nav.main_menu')}
-      style={{
-        backgroundColor: '#1A2B48', // Primary color
-        boxShadow: '0 4px 6px rgba(13, 21, 34, 0.1)'
-      }}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between py-4">
@@ -130,14 +118,14 @@ export const SecureCyberNavigation = () => {
                 safeNavigate('/');
               }}
               className="flex items-center"
-              style={{ color: '#FFFFFF' }} // Contrast color
+              style={{ color: '#FFFFFF' }}
             >
               <svg 
                 width="32" 
                 height="32" 
                 viewBox="0 0 24 24" 
                 fill="none" 
-                stroke="#5C7699" // Details color
+                stroke="#5C7699"
                 strokeWidth="2"
                 className="mr-2"
               >
@@ -145,7 +133,7 @@ export const SecureCyberNavigation = () => {
               </svg>
               <span className="text-xl font-bold">
                 CyberGuard <span style={{ 
-                  backgroundColor: '#0D1522', // Shadow color
+                  backgroundColor: '#0D1522',
                   color: '#FFFFFF',
                   padding: '2px 6px',
                   borderRadius: '4px',
@@ -212,7 +200,7 @@ export const SecureCyberNavigation = () => {
                 <div 
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50"
                   style={{ 
-                    border: '1px solid #2D4A77', // Secondary color
+                    border: '1px solid #2D4A77',
                     boxShadow: '0 4px 6px rgba(13, 21, 34, 0.1)'
                   }}
                   role="menu"
@@ -582,26 +570,6 @@ export const SecureCyberNavigation = () => {
             </li>
           </ul>
         </div>
-      </div>
-      
-      {/* Decorative watermark - purely visual, no security impact */}
-      <div 
-        className="watermark"
-        aria-hidden="true"
-        style={{ 
-          color: 'rgba(92, 118, 153, 0.05)', // #5C7699 with low opacity
-          fontSize: '12rem',
-          fontWeight: 'bold',
-          position: 'fixed',
-          bottom: '10%',
-          right: '5%',
-          transform: 'rotate(-30deg)',
-          pointerEvents: 'none',
-          userSelect: 'none',
-          zIndex: '-1'
-        }}
-      >
-        CYBERGUARD
       </div>
     </nav>
   );
