@@ -1,4 +1,4 @@
-// This fixes the "global is not defined" error
+// Fixes the "global is not defined" error
 import { Buffer } from 'buffer';
 
 // Add global to window
