@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,11 +12,30 @@ export default defineConfig({
     outDir: 'dist',
   },
   optimizeDeps: {
-    include: ['react', 'react-dom'],
+    include: ['react', 'react-dom', 'buffer'],
+    esbuildOptions: {
+      define: {
+        global: 'globalThis'
+      },
+      plugins: [
+        {
+          name: 'buffer',
+          setup(build) {
+            build.onResolve({ filter: /^buffer$/ }, () => ({
+              path: require.resolve('buffer/'),
+            }))
+          },
+        },
+      ],
+    }
   },
   resolve: {
     alias: {
-      '@': '/src',
+      '@': resolve(__dirname, './src'),
+      'buffer': 'buffer'
     },
-  },
+    fallback: {
+      buffer: require.resolve('buffer/')
+    }
+  }
 })
